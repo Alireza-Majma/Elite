@@ -1,0 +1,52 @@
+<div  >
+    <h2 class="page-title">Leagues</h2>
+    <alert type="info" ng-show="vm.showHelpAlert" close="vm.hideAlert()">
+        First create your league. Then "Configure" your league by creating teams and games.
+    </alert>
+    <br/>
+   
+    <table class="table table-bordered table-hover table-striped">
+        <thead>
+            <tr>
+                <th>League Name</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <input type="text" class="form-control" placeholder="New League Name" ng-model="vm.newLeagueName">
+                </td>
+                <td>
+                    <button type="submit" class="btn btn-primary" ng-click="vm.addItem()"
+                            uib-tooltip="Click here to add new league" tooltip-placement="top">
+                        <span class="glyphicon glyphicon-plus"></span> Add
+                    </button>
+                </td>
+            </tr>
+
+            <tr ng-repeat="league in vm.leagues">
+                <td ng-if="!vm.currentEdit[league.leagueId]">{{league.name}}</td>
+                <td ng-if="!!vm.currentEdit[league.leagueId]">
+                    <input type="text" class="form-control" ng-model="vm.itemToEdit.name" />
+                </td>
+
+                <td>
+                    <div class="btn-group " uib-dropdown is-open="status.isopen">
+                        <button id="single-button" type="button" class="btn btn-success"uib-dropdown-toggle ng-disabled="disabled">
+                            Action <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                            <li><a ng-href="#/leagues/{{league.leagueId}}/teams">Configure</a></li>
+                            <li><a ng-click="vm.editItem(league)">Edit</a></li>
+                            <li><a ng-click="vm.deleteItem(league.leagueId)">Delete</a></li>
+                        </ul>
+                    </div>
+
+                    <button class="btn btn-success" ng-show="vm.currentEdit[league.leagueId]" ng-click="vm.saveItem(league)">Save</button>
+                    <button class="btn btn-danger" ng-show="vm.currentEdit[league.leagueId]" ng-click="vm.cancelEdit(league.leagueId)">Cancel</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

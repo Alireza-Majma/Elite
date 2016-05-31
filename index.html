@@ -1,0 +1,64 @@
+﻿<!doctype html>
+<html class="no-js" ng-app="eliteAdmin">
+<head>
+    <meta charset="utf-8">
+    <title>Elite Schedule Admin</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!--<link href="styles/bootstrap.united.min.css" rel="stylesheet" />-->
+
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/toastr.css" rel="stylesheet" />
+    <link href="Content/main.css" rel="stylesheet" />
+    
+</head>
+<body>
+
+<div id="applicationHost" class="container body-content admin-appHost">
+    <div data-ng-include="'/app/layout/shell.html'"></div>
+</div>
+
+<div id="footer">
+    <div class="container">
+        <span class="pull-right text-info credit">Elite Schedule Admin - &copy; Steve Michelotti</span>
+    </div>
+</div>
+
+<!-- Vendor Scripts -->
+<script src="Scripts/jquery-2.2.3.js"></script>
+
+<script src="Scripts/angular.js"></script>
+<script src="Scripts/angular-animate.js"></script>
+<script src="Scripts/ui-bootstrap-tpls-1.3.2.js"></script>
+<script src="Scripts/angular-resource.js"></script>
+<script src="Scripts/angular-route.min.js"></script>
+<script src="Scripts/toastr.js"></script>
+<script src="Scripts/lodash.js"></script>
+<script src="Scripts/moment.js"></script>
+<script src="Scripts/spin.js"></script>
+
+
+<!-- inject:js -->
+<script src="app/app.js"></script>
+<script src="app/directives/spinner.directive.js"></script>
+<script src="app/services/dialogs.service.js"></script>
+<script src="app/config.exceptionHandler.js"></script>
+<script src="app/services/elite-api.service.js"></script>
+<script src="app/services/toastError.js"></script>
+<script src="app/home/home.controller.js"></script>
+<script src="app/games/edit-game.controller.js"></script>
+<script src="app/games/games-initial-data.service.js"></script>
+<script src="app/games/games.controller.js"></script>
+<script src="app/layout/shell.controller.js"></script>
+<script src="app/league-home/league-home.controller.js"></script>
+<script src="app/leagues/leagues.controller.js"></script>
+<script src="app/services/app-spinner.service.js"></script>
+<script src="app/teams/edit-team.controller.js"></script>
+<script src="app/teams/teams.controller.js"></script>
+<script src="app/shared/confirm-modal.controller.js"></script>
+<!-- endinject -->
+
+
+</body>
+</html>
